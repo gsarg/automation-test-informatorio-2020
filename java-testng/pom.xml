@@ -8,8 +8,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<defaultSuiteFiles>./planes/plan1.xml</defaultSuiteFiles>
-		<suiteFile>${defaultSuiteFiles}</suiteFile>
+		<suiteFile>plan1.xml</suiteFile>
 	</properties>
 
 	<build>
@@ -30,7 +29,7 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>${suiteFile}</suiteXmlFile>
+						<suiteXmlFile>./planes/${suiteFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

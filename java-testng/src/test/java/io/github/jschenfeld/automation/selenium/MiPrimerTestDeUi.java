@@ -27,25 +27,29 @@ public class MiPrimerTestDeUi {
 
 	@Test(enabled = false)
 	public void busquedaEnGoogle() {
-		driver.get("https://www.google.com.ar");
+		driver.get("https://duckduckgo.com/");
 
 		GoogleBusquedaPageObject googleBusquedaPage = new GoogleBusquedaPageObject(driver);
 		googleBusquedaPage.ingresarBusqueda("Informatorio Chaco");
 		googleBusquedaPage.clickBotonBuscar();
 
 		System.out.println(driver.getCurrentUrl());
+
 	}
 
-	@Test
+	@Test(enabled = true, threadPoolSize = 5, invocationCount = 3)
 	public void busquedaEnGoogleUsandoPageFactory() {
-		driver.get("https://www.google.com.ar");
+		driver.get("https://duckduckgo.com");
 
 		GoogleBusquedaPageFactory googleBusquedaPage = new GoogleBusquedaPageFactory(driver);
 		googleBusquedaPage.buscar("Informatorio Chaco");
+	
 		GoogleResultadosPageFactory googleResultadosPageFactory = new GoogleResultadosPageFactory(driver);
 		googleResultadosPageFactory.abrirLaPaginaDelPoloIt();
-		System.out.println(driver.getCurrentUrl());
-		Assert.assertEquals("https://poloitchaco.org.ar/informatorio/", driver.getCurrentUrl());
+		System.out.println( );
+		System.out.println("La url devuelta es: " + driver.getCurrentUrl());
+		System.out.println( );
+		Assert.assertEquals("http://www.actualidadchaco.com/vernota.asp?id_noticia=120379", driver.getCurrentUrl());
 	}
 
 	@AfterMethod(alwaysRun = true)

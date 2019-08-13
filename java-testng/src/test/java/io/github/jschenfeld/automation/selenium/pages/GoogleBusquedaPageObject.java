@@ -20,7 +20,7 @@ public class GoogleBusquedaPageObject {
 	}
 	
 	public void clickBotonBuscar() {
-		WebElement botonBuscar = driver.findElement(By.name("btnK"));
+		WebElement botonBuscar = driver.findElement(By.id("search_button_homepage"));
 		botonBuscar.submit();
 	}
 }

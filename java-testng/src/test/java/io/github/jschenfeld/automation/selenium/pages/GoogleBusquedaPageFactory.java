@@ -11,7 +11,7 @@ public class GoogleBusquedaPageFactory {
 	@FindBy(name = "q")
 	private WebElement campoDeBusqueda;
 
-	@FindBy(name = "btnK")
+	@FindBy(id = "search_button_homepage")
 	private WebElement botonBuscar;
 
 	public GoogleBusquedaPageFactory(WebDriver driver) {
